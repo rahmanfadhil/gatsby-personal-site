@@ -6,5 +6,10 @@
     "plugin:import/errors",
     "plugin:import/errors"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parser": "babel-eslint"
 }
