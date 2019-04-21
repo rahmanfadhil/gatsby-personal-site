@@ -3,8 +3,10 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Rahman Fadhil <rhmnfadhil@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
     "gatsby": "^2.3.25",
     "gatsby-image": "^2.0.39",
     "gatsby-plugin-manifest": "^2.0.29",
@@ -19,6 +21,12 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.17.0"
   },
   "keywords": [
