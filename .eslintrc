@@ -9,6 +9,7 @@
   "rules": {
     "jsx-a11y/accessible-emoji": "off"
   },
+  "env": { "node": true, "browser": true },
   "settings": {
     "react": {
       "version": "detect"
