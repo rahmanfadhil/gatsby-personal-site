@@ -6,6 +6,9 @@
     "plugin:import/errors",
     "plugin:import/errors"
   ],
+  "rules": {
+    "jsx-a11y/accessible-emoji": "off"
+  },
   "settings": {
     "react": {
       "version": "detect"
