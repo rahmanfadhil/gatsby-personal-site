@@ -1,93 +1,64 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Global, css } from '@emotion/core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'gatsby'
 
 import '../utils/fontawesome'
+import GlobalStyle from '../components/GlobalStyle'
 
 const Header = styled.div({
-  backgroundColor: '#fff',
+  backgroundColor: '#777D71',
 })
 
-const Container = styled.div({
+const HeaderContainer = styled.div({
   display: 'flex',
   maxWidth: 960,
   margin: '0 auto',
-  padding: '0 20px',
-  '@media (max-width: 768px)': {
-    padding: 0,
-  },
 })
 
 const HeaderSpace = styled.div({ flex: 1 })
 
 const HeaderTitle = styled(Link)({
   textDecoration: 'none',
-  paddingLeft: 20,
-  paddingRight: 20,
+  color: '#F7F6E7',
+  fontSize: 18,
+  fontFamily: "'Montserrat', sans-serif",
+  textTransform: 'uppercase',
+  fontWeight: 700,
+  letterSpacing: 2.5,
+  padding: 13,
+})
+
+const HeaderMenu = styled(Link)(({ active }) => ({
+  textDecoration: 'none',
+  color: '#F7F6E7',
+  fontSize: 15,
+  fontFamily: "'Montserrat', sans-serif",
+  fontWeight: 500,
+  letterSpacing: 2.5,
   display: 'flex',
   alignItems: 'center',
-  textTransform: 'uppercase',
-  fontFamily: "'Montserrat', sans-serif",
-  fontSize: 19,
-  fontWeight: 700,
-  letterSpacing: '2.5px',
-  cursor: 'pointer',
-  color: '#212121',
+  padding: '0 15px',
+  backgroundColor: active ? '#62675D' : 'none',
   ':hover': {
-    color: '#212121',
-  },
-  '@media (max-width: 768px)': {
-    fontSize: 16,
-  },
-})
-
-const HeaderItem = styled(HeaderTitle)(({ active }) => ({
-  fontWeight: 600,
-  padding: '30px 20px',
-  fontSize: 14,
-  letterSpacing: '1.5px',
-  color: active ? '#212121' : '#757575',
-  '@media (max-width: 768px)': {
-    display: 'none',
+    color: active ? '#F7F6E7' : '#DFDDC5',
   },
 }))
-
-const HeaderMenu = styled.div({
-  padding: 20,
-  fontSize: 16,
-  cursor: 'pointer',
-  color: '#212121',
-  '@media (min-width: 768px)': {
-    display: 'none',
-  },
-})
 
 function MainLayout({ children }) {
   return (
     <div>
-      <Global
-        styles={css`
-          @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
-
-          body {
-            margin: 0;
-          }
-        `}
-      />
+      <GlobalStyle />
       <Header>
-        <Container navbar>
+        <HeaderContainer>
           <HeaderTitle to="/">rahmanfadhil.</HeaderTitle>
           <HeaderSpace />
-          <HeaderItem to="/projects">Projects</HeaderItem>
-          <HeaderItem to="/blog">Blog</HeaderItem>
-          <HeaderItem to="/about">About</HeaderItem>
-          <HeaderItem to="/contact">Contact</HeaderItem>
-          <HeaderMenu>
-            <FontAwesomeIcon icon="bars" />
+          <HeaderMenu to="/projects" active>
+            Projects
           </HeaderMenu>
-        </Container>
+          <HeaderMenu to="/blog">Blog</HeaderMenu>
+          <HeaderMenu to="/about">About</HeaderMenu>
+          <HeaderMenu to="/contact">Contact</HeaderMenu>
+        </HeaderContainer>
       </Header>
       {children}
     </div>
