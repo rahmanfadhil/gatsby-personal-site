@@ -4,7 +4,7 @@ import SEO from '../components/SEO'
 import MainLayout from '../layouts/MainLayout'
 
 const IndexPage = () => (
-  <MainLayout>
+  <MainLayout selectedMenu="home">
     <SEO fullTitle="Rahman Fadhil | Full-Stack Mobile & Web Developer" />
     <div>
       <h1>Home Page</h1>
